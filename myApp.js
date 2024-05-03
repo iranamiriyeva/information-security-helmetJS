@@ -6,6 +6,8 @@ const helmet = require('helmet')
 //Solution2: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 app.use(helmet.hidePoweredBy())
 
+//Solution3: Mitigate the Risk of Clickjacking with helmet.frameguard()
+app.use(helmet.frameguard({action: 'deny'}))
 
 module.exports = app
 
