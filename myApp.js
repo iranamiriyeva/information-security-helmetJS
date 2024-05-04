@@ -28,6 +28,12 @@ app.use(helmet.dnsPrefetchControl())
 //Solution9: Disable Client-Side Caching with helmet.noCache()
 app.use(helmet.noCache())
 
+//Solution10: Set a Content Security Policy with helmet.contentSecurityPolicy()
+app.use(helmet.contentSecurityPolicy({ directives: { 
+    defaultSrc: ["'self'"], scriptSrc: ["'self'", "trusted-cdn.com"] 
+  }} 
+))
+
 
 module.exports = app
 
