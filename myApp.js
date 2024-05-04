@@ -15,6 +15,11 @@ app.use(helmet.xssFilter())
 //Solution5: Avoid Inferring the Response MIME Type with helmet.noSniff()
 app.use(helmet.noSniff())
 
+//Solution6: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+app.use(helmet.ieNoOpen())
+
+
+
 module.exports = app
 
 const api = require('./server.js')
