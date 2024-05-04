@@ -9,6 +9,10 @@ app.use(helmet.hidePoweredBy())
 //Solution3: Mitigate the Risk of Clickjacking with helmet.frameguard()
 app.use(helmet.frameguard({action: 'deny'}))
 
+//Solution4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
+app.use(helmet.xssFilter())
+
+
 module.exports = app
 
 const api = require('./server.js')
