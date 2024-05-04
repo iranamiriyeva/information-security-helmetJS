@@ -25,6 +25,9 @@ app.use(helmet.hsts({maxAge: timeInSeconds, force: true}))
 //Solution8: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 app.use(helmet.dnsPrefetchControl())
 
+//Solution9: Disable Client-Side Caching with helmet.noCache()
+app.use(helmet.noCache())
+
 
 module.exports = app
 
