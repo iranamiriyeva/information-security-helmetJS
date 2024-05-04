@@ -12,6 +12,8 @@ app.use(helmet.frameguard({action: 'deny'}))
 //Solution4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 app.use(helmet.xssFilter())
 
+//Solution5: Avoid Inferring the Response MIME Type with helmet.noSniff()
+app.use(helmet.noSniff())
 
 module.exports = app
 
