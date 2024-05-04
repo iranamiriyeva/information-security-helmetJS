@@ -18,6 +18,9 @@ app.use(helmet.noSniff())
 //Solution6: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 app.use(helmet.ieNoOpen())
 
+//Solution7: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
+const timeInSeconds = 90 * 24 * 60 * 60
+app.use(helmet.hsts({maxAge: timeInSeconds, force: true}))
 
 
 module.exports = app
